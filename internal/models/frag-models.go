@@ -6,6 +6,8 @@ type Fragrance struct {
 	HouseID      int    `json:"house_id"`
 	Description  string `json:"description"`
 	FraganticaID string `json:"fraganticaID"`
+	FragIMG      string `json:"frag_img"`
+	HouseName    string `json:"house_name"`
 }
 
 type FragranceHouse struct {

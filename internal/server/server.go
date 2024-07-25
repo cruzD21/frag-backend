@@ -22,13 +22,9 @@ func (s *Server) Run() error {
 	routes.RegisterSearchRoutes(router)
 
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "hello world\n")
-		log.Println("hello world")
+		fmt.Fprintf(w, "server running\n")
 
 	})
-	//headersOk := handlers.AllowedHeaders([]string{"X-Requested-With"})
-	//originsOk := handlers.AllowedOrigins([]string{os.Getenv("ORIGIN_ALLOWED")})
-	//methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "OPTIONS"})
 
 	if err := http.ListenAndServe(":5000", router); err != nil {
 		log.Printf("http.ListenAndServe -> %v", err)

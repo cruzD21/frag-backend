@@ -8,6 +8,8 @@ import (
 func RegisterFragranceRoutes(router *mux.Router) {
 	router.HandleFunc("/frag", controllers.GetFragrances).Methods("GET")
 	router.HandleFunc("/frag/{fragID}", controllers.GetFragranceByID).Methods("GET")
+	router.HandleFunc("/test", controllers.GetFragNote).Methods("GET")
+	router.HandleFunc("/notes/{fragID}", controllers.GetFragNote).Methods("GET")
 }
 
 func RegisterSearchRoutes(router *mux.Router) {
